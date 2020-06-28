@@ -1,25 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Weather API</title>
 </head>
-<body>
-   
-    
+
+<body class="flex-column min-100-vh">
+
+    <header class="hero">
+        <h1 class="app-title bg-dark text-center text-white">Weather Dashboard</h1>
+    </header>
+
+    <main class="flex-row justify-space-between">
+        <!-- Left Column 1 -->
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <form id="user-form" class="card-body">
+
+                    <label class="form-label" for="text">Search for a City:</label>
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <!-- Search Bar -->
+                        <input type="text" class="inputValue">
+                        <div class="input-group-append">
+                            <!-- Search Button -->
+                            <button class="button btn-outline-secondary bg-primary text-white" type="button"><i
+                                    class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        
+
+        <!-- Bottom Column 1B-->
+        <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">Some example text. Some example text.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column 2 -->
+        <div class="col-12 col-md-8">
+            <div class="card">
+                <div id="repos-container" class="card-body">
+
+                    <!-- change these later -->
+                    <section class="location">
+                        <h2 class="name">City Name:<span id="date"></span></h2>
+
+                    </section>
+                    <div class="display">
+                        <div class="temperature">Temperature:</div>
+                        <div class="wind-speed">Wind Speed:</div>
+                        <div class="humidity">Humidity:</div>
+                        <!-- cant find this value -->
+                        <div class="uv-index">UV Index:</div>
+                        <div class="description">---</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column 3 -->
+            <div class="container-fluid">
+                <h2 class="forecast-header">5 Day Forecast</h2>
+                <!-- 5day forecast containers -->
+                <div class="row row-cols-5 card-deck">
+
+                    <div class="col card bg-primary text-white">
+                        <div class="card-body">
+                            <p class="forecast-date">Date</p>
+                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-temp">Temp</p>
+                            <p class="forecast-hum">Hum</p>
+                        </div>
+                    </div>
+                    <div class="col card bg-primary text-white">
+                        <div class="card-body">
+                            <p class="forecast-date">Date</p>
+                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-temp">Temp</p>
+                            <p class="forecast-hum">Hum</p>
+                        </div>
+                    </div>
+
+                    <div class="col card bg-primary text-white">
+                        <div class="card-body">
+                            <p class="forecast-date">Date</p>
+                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-temp">Temp</p>
+                            <p class="forecast-hum">Hum</p>
+                        </div>
+                    </div>
+                    <div class="col card bg-primary text-white">
+                        <div class="card-body">
+                            <p class="forecast-date">Date</p>
+                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-temp">Temp</p>
+                            <p class="forecast-hum">Hum</p>
+                        </div>
+                    </div>
+                    <div class="col card bg-primary text-white">
+                        <div class="card-body">
+                            <p class="forecast-date">Date</p>
+                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-temp">Temp</p>
+                            <p class="forecast-hum">Hum</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
 
 
 
+        <!-- <div class="card">
+                        <div id="repos-container" class="card-body">
+                            <h2 id="city-name-date" class="subtitle">date</h2>
+                            <h3 id="weather-icon" class="subtitle">*</h3>
+                            <h3 id="temp" class="subtitle">Temp:</h3>
+                            <h3 id="humidity" class="subtitle">Humidity:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm forecast-days">
+                    <div class="card">
+                        <h2 id="city-name-date" class="subtitle">date</h2>
+                        <h3 id="weather-icon" class="subtitle">*</h3>
+                        <h3 id="temp" class="subtitle">Temp:</h3>
+                        <h3 id="humidity" class="subtitle">Humidity:</h3>
+                    </div>
+                </div>
+                <div class="col-sm forecast-days">
+                    <div class="card">
+                        <h2 id="city-name-date" class="subtitle">date</h2>
+                        <h3 id="weather-icon" class="subtitle">*</h3>
+                        <h3 id="temp" class="subtitle">Temp:</h3>
+                        <h3 id="humidity" class="subtitle">Humidity:</h3>
+                    </div>
+                </div>
+                <div class="col-sm forecast-days">
+                    <div class="card">
+                        <h2 id="city-name-date" class="subtitle">date</h2>
+                        <h3 id="weather-icon" class="subtitle">*</h3>
+                        <h3 id="temp" class="subtitle">Temp:</h3>
+                        <h3 id="humidity" class="subtitle">Humidity:</h3>
+                    </div>
+                </div>
+                <div class="col-sm forecast-days">
+                    <div class="card">
+                        <h2 id="city-name-date" class="subtitle">date</h2>
+                        <h3 id="weather-icon" class="subtitle">*</h3>
+                        <h3 id="temp" class="subtitle">Temp:</h3>
+                        <h3 id="humidity" class="subtitle">Humidity:</h3>
+                    </div>
+                </div> -->
 
+
+        </div>
+        </div>
+
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
