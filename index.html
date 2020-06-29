@@ -11,7 +11,6 @@
 </head>
 
 <body class="flex-column min-100-vh">
-
     <header class="hero">
         <h1 class="app-title bg-dark text-center text-white">Weather Dashboard</h1>
     </header>
@@ -21,52 +20,42 @@
         <div class="col-12 col-md-4">
             <div class="card">
                 <form id="user-form" class="card-body">
-
                     <label class="form-label" for="text">Search for a City:</label>
                     <div class="input-group md-form form-sm form-2 pl-0">
                         <!-- Search Bar -->
                         <input type="text" class="inputValue">
                         <div class="input-group-append">
                             <!-- Search Button -->
-                            <button class="button btn-outline-secondary bg-primary text-white" type="button"><i
-                                    class="fa fa-search"></i>
+                            <button class="button btn-outline-secondary bg-primary text-white" type="button">
+                                <i class="fa fa-search"></i>
                             </button>
                         </div>
                     </div>
-
                 </form>
             </div>
-        
-
-        <!-- Bottom Column 1B-->
-        <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Some example text. Some example text.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+            <!-- Bottom Column 1B-->
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h4 class="card-title">Card title</h4>
+                    <p class="card-text">Some example text. Some example text.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a> -->
+                </div>
             </div>
-          </div>
-
         </div>
 
         <!-- Right Column 2 -->
         <div class="col-12 col-md-8">
             <div class="card">
                 <div id="repos-container" class="card-body">
-
-                    <!-- change these later -->
                     <section class="location">
-                        <h2 class="name">City Name:<span id="date"></span></h2>
-
+                        <h2 id="cityName"> City Name</h2>
                     </section>
                     <div class="display">
                         <div class="temperature">Temperature:</div>
                         <div class="wind-speed">Wind Speed:</div>
                         <div class="humidity">Humidity:</div>
-                        <!-- cant find this value -->
-                        <div class="uv-index">UV Index:</div>
-                        <div class="description">---</div>
+                        <div class="uv-index-container">UV Index:<span class=" uv-index"></span></div>
                     </div>
                 </div>
             </div>
@@ -75,12 +64,11 @@
             <div class="container-fluid">
                 <h2 class="forecast-header">5 Day Forecast</h2>
                 <!-- 5day forecast containers -->
-                <div class="row row-cols-5 card-deck">
-
+                <div class="row row-cols-5 card-deck"> 
                     <div class="col card bg-primary text-white">
                         <div class="card-body">
                             <p class="forecast-date">Date</p>
-                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-date description">Icon</p>
                             <p class="forecast-temp">Temp</p>
                             <p class="forecast-hum">Hum</p>
                         </div>
@@ -88,16 +76,7 @@
                     <div class="col card bg-primary text-white">
                         <div class="card-body">
                             <p class="forecast-date">Date</p>
-                            <p class="forecast-icon">Icon</p>
-                            <p class="forecast-temp">Temp</p>
-                            <p class="forecast-hum">Hum</p>
-                        </div>
-                    </div>
-
-                    <div class="col card bg-primary text-white">
-                        <div class="card-body">
-                            <p class="forecast-date">Date</p>
-                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-description description">Icon</p>
                             <p class="forecast-temp">Temp</p>
                             <p class="forecast-hum">Hum</p>
                         </div>
@@ -105,7 +84,7 @@
                     <div class="col card bg-primary text-white">
                         <div class="card-body">
                             <p class="forecast-date">Date</p>
-                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-date description">Icon</p>
                             <p class="forecast-temp">Temp</p>
                             <p class="forecast-hum">Hum</p>
                         </div>
@@ -113,64 +92,21 @@
                     <div class="col card bg-primary text-white">
                         <div class="card-body">
                             <p class="forecast-date">Date</p>
-                            <p class="forecast-icon">Icon</p>
+                            <p class="forecast-date description">Icon</p>
+                            <p class="forecast-temp">Temp</p>
+                            <p class="forecast-hum">Hum</p>
+                        </div>
+                    </div>
+                    <div class="col card bg-primary text-white">
+                        <div class="card-body">
+                            <p class="forecast-date">Date</p>
+                            <p class="forecast-date description">Icon</p>
                             <p class="forecast-temp">Temp</p>
                             <p class="forecast-hum">Hum</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </div>
-
-
-
-
-
-        <!-- <div class="card">
-                        <div id="repos-container" class="card-body">
-                            <h2 id="city-name-date" class="subtitle">date</h2>
-                            <h3 id="weather-icon" class="subtitle">*</h3>
-                            <h3 id="temp" class="subtitle">Temp:</h3>
-                            <h3 id="humidity" class="subtitle">Humidity:</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm forecast-days">
-                    <div class="card">
-                        <h2 id="city-name-date" class="subtitle">date</h2>
-                        <h3 id="weather-icon" class="subtitle">*</h3>
-                        <h3 id="temp" class="subtitle">Temp:</h3>
-                        <h3 id="humidity" class="subtitle">Humidity:</h3>
-                    </div>
-                </div>
-                <div class="col-sm forecast-days">
-                    <div class="card">
-                        <h2 id="city-name-date" class="subtitle">date</h2>
-                        <h3 id="weather-icon" class="subtitle">*</h3>
-                        <h3 id="temp" class="subtitle">Temp:</h3>
-                        <h3 id="humidity" class="subtitle">Humidity:</h3>
-                    </div>
-                </div>
-                <div class="col-sm forecast-days">
-                    <div class="card">
-                        <h2 id="city-name-date" class="subtitle">date</h2>
-                        <h3 id="weather-icon" class="subtitle">*</h3>
-                        <h3 id="temp" class="subtitle">Temp:</h3>
-                        <h3 id="humidity" class="subtitle">Humidity:</h3>
-                    </div>
-                </div>
-                <div class="col-sm forecast-days">
-                    <div class="card">
-                        <h2 id="city-name-date" class="subtitle">date</h2>
-                        <h3 id="weather-icon" class="subtitle">*</h3>
-                        <h3 id="temp" class="subtitle">Temp:</h3>
-                        <h3 id="humidity" class="subtitle">Humidity:</h3>
-                    </div>
-                </div> -->
-
-
-        </div>
         </div>
 
     </main>
