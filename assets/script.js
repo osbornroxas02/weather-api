@@ -46,7 +46,8 @@ button.addEventListener('click', function () {
                     forecastTemp = document.querySelector('.forecast-temp').innerHTML = temperatureValue;
                     forecastDay = document.querySelector('.forecast-hum').innerHTML = humidityValue;
                 })
-                .catch(err => alert("Wrong city name!"));
+                
+                // .catch(err => alert("Wrong city name!"));
             localStorage.setItem(nameValue, data);
             console.log('this is the local storage', localStorage)
         });
