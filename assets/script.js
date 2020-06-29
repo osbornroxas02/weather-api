@@ -17,7 +17,7 @@ button.addEventListener('click', function () {
             cityName.innerHTML = nameValue + date;
             console.log('this is the name value: ', nameValue)
             console.log('this is the data value: ', data)
-
+            
             var temperatureValue = 'Temperature: ' + data['main']['temp'] + ' °F';
             var windSpeedValue = 'Wind Speed: ' + data['wind']['speed'] + ' MPH';
             var humidityValue = 'Humidity: ' + data['main']['humidity'] + ' %';
@@ -37,21 +37,21 @@ button.addEventListener('click', function () {
                     var uvIndexValue = data['value'];
                     uvIndex.innerHTML = uvIndexValue;
                     name.innerHTML = nameValue;
-
-                    //5 day forecast : unfinished - couldn't find the 5day forecast on weather app
+            
+                    //5 day forecast 
                     var icon = document.querySelector('.forecast-icon');
                     var city = document.querySelector('.name');
 
                     forecastDate = document.querySelector('.forecast-date').innerHTML = date;
                     forecastTemp = document.querySelector('.forecast-temp').innerHTML = temperatureValue;
-                    forecastDay = document.querySelector('.forecast-hum').innerHTML = humidityValue;
+                    forecastDay = document.querySelector('.forecast-hum').innerHTML = humidityValue;     
                 })
-
-                // .catch(err => alert("Wrong city name!"));
-            localStorage.setItem(nameValue, data);
-            console.log('this is the local storage', localStorage)
+                .catch(err => alert("Wrong city name!"));
+                localStorage.setItem(nameValue, data);
+                console.log('this is the local storage', localStorage)
         });
 });
 
 var today = new Date();
 var date = ' (' + (today.getMonth() + 1) + '/' + (today.getDate()) + '/' + (today.getFullYear()) + ')';
+document.getElementById('date').innerHTML = date;
